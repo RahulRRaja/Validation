@@ -16,12 +16,12 @@ public class Details_Controller {
     @Autowired
     Details_Service details_service;
     @GetMapping("/Details")
-    private List<Details> getALlDetails()
+    private List<Details> getALlDetails(@Valid)
     {
         return details_service.getALlDetails();
     }
     @PostMapping("/Details")
-    private Details saveDetails(@RequestBody Details details)
+    private Details saveDetails(@Valid @RequestBody Details details)
     {
         Details_Service.SaveOrUpdate(details);
         return details;
